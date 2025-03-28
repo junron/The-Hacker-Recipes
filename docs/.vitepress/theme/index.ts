@@ -16,6 +16,7 @@ import BannerSponsor from './components/BannerSponsor.vue'
 import AsideSponsors from './components/AsideSponsors.vue'
 import Donate from './components/Donate.vue'
 import FooterLinks from './components/FooterLinks.vue';
+import mdVar from '../plugins/mdVar';
 
 
 const isMobileorTablet = useMediaQuery('(max-width: 1279px)')
@@ -62,5 +63,7 @@ export default {
       () => route.path,
       () => nextTick(() => initZoom())
     )
+
+    mdVar({route})
   },
 } satisfies Theme
